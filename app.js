@@ -2,7 +2,7 @@ const express = require("express");
 const ejs = require("ejs");
 const bodyParser = require("body-parser");
 const path = require("path");
-const rootDir = require("./util/path")
+const pageNotFound = require("./controllers/error");
 const app = express();
 
 app.set('view engine', 'ejs')
@@ -17,11 +17,7 @@ app.use(express.static(path.join(__dirname,'public')));
 app.use("/admin",adminRoutes);//Filtering Path
 app.use(shopRoutes);
 
-app.use((req,res,next)=>{
- res.status(404).render('404',{
-    pageTitle: "Page Not Found!"
- });
-})
+app.use(pageNotFound.getPageNotFound)
 
 
 app.listen(3500,()=>{

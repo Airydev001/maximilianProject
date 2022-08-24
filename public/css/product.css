@@ -8,7 +8,18 @@
     max-width: 95%;
     margin:auto;
 }
-
+.grid {
+  display:flex;
+  justify-content:space-around;
+  align-items:content;
+  gap: 4%;
+  flex-wrap: wrap;
+}
+.grid-oversee{
+  margin: 0 auto;
+  width:70%;
+  
+}
 .product__title {
     font-size: 1.2rem;
     text-align: center;
@@ -23,12 +34,7 @@
 .product__description {
     text-align: center;
 }
-.btn {
-    
-    width:150px;
-    max-width:100%;
-    margin:0 5rem;
-}
+
 .product-form {
     width: 20rem;
     max-width: 90%;
@@ -38,15 +44,17 @@
     margin: 1rem 0;
   }
   .form-control label,
-  .form-control input {
+  .form-control input,
+  .form-control textarea {
     display: block;
     width: 100%;
   }
-  .form-control input {
+  .form-control input,.form-control textarea {
     border: 1px solid rgb(0, 255, 85);
     font: inherit;
     border-radius: 2px;
   }
+  
   button {
     font: inherit;
     border: 1px solid #ccc;
@@ -56,11 +64,18 @@
     border-radius: 0.2rem;
     padding: 0.4rem;
     border: none;
+    
   }
   button:hover,
-  button:active {
+  button:active,
+  button a:hover,
+  button a:active {
     color: white;
     background-color: rgb(0, 255, 85);
+  }
+  button a{
+    text-decoration: none;
+    color:rgb(0, 255, 85);
   }
   .card__image{
     border-bottom: 2px solid grey;
@@ -70,7 +85,21 @@
   height:300px;
   transform:scale(0.5);
   transition:2s;
+  margin-bottom: 5px;
 }
+
 .card__image img:hover{
   transform:scale(1)
+}
+.card__actions {
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  align-content: center;
+  gap:10px;
+ 
+  
+}
+article{
+  flex-basis:42.5%;
 }
