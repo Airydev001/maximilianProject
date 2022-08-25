@@ -17,6 +17,13 @@ exports.getProducts = (req,res)=>{
 
 
 }
+exports.getProduct = (req,res,next) =>{
+  const productId = req.params.productId;
+  Products.findById(productId,(product)=>{
+   console.log(product)
+  })
+  res.redirect("/");
+}
 exports.getIndex = (req,res,next)=>{
   Products.fetchAll((products)=>{
     res.render('shop/index',{
@@ -45,7 +52,7 @@ exports.getCarts= (req,res)=>{
 exports.getOrders= (req,res)=>{
     
   Products.fetchAll((products)=>{
-    res.render('shop/cart',{
+    res.render('shop/order',{
       prods:products,
       
       path:'/carts',

@@ -25,7 +25,8 @@ module.exports = class Product {
     }
     save(){
      //helper functions invocation with anonymous function
-        getProductsFromFile(products =>{
+        this.ID = (Math.random() * 30000).toString();
+     getProductsFromFile(products =>{
         products.push(this);
         fs.writeFile(p,JSON.stringify(products), (err)=>{
              console.log(err);
@@ -39,4 +40,10 @@ module.exports = class Product {
       getProductsFromFile(cb);
        
     }
-}
+    static findById(ID,cb){
+        getProductsFromFile(products =>{
+            const product = products.find( p => p.ID === ID)
+            cb(product)
+        })
+    }
+} 
