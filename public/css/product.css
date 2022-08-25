@@ -104,3 +104,21 @@
 article{
   flex-basis:42.5%;
 }
+.centered{
+ text-align:center;
+}
+.centered div > img {
+  width:200px;
+  transform:scale(0.5);
+  height:300px;
+  transition: 2s ease-in-out;
+  margin: 10px 0;
+}
+div > img:hover{
+  
+  transform:scale(1);
+}
+hr{
+  margin: 0 auto;
+  width:400px;
+}
